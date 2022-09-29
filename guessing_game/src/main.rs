@@ -14,12 +14,12 @@ fn main() {
         let mut guess = String::new();
         
         io::stdin()
-            .read_line(&mut guess) // 這邊不能有 ;
+            .read_line(&mut guess) // no ";"
             .expect("Failed to read line.");
             
         // let guess: u32 = guess.trim().parse().expect("Please enter a number.");
         let guess: u32 = match guess.trim().parse() {
-            Ok(num) => num,
+            Ok(num) => num, // ","
             Err(_) => continue,
         };
         println!("You guess: {}", guess);
